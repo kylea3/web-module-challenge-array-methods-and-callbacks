@@ -109,9 +109,28 @@ Use the higher order function `getAverageGoals` to do the following:
  
 */
 
-function getAverageGoals(/* code here */) {
-    /* code here */
- }
+// function getAverageGoals(getFinalsCB, array) {
+//     const averageGoals = getFinalsCB(array).reduce(function(acc, currentValue){
+//         return acc + currentValue['Home Team Goals'] + currentValue['Away Team Goals'];
+//     }, 0)
+//         return (averageGoals / getFinalsCB(array).length).toFixed(2);
+    
+//     }
+
+//     console.log(getAverageGoals(getFinals, fifaData));
+
+function getAverageGoals(data) {
+    const averageGoals = data.reduce(function(acc, currentValue){
+        return acc + currentValue['Home Team Goals'] + currentValue['Away Team Goals'];
+    }, 0)
+        return (averageGoals / data.length).toFixed(2);
+    
+    }
+
+    console.log(getAverageGoals(fifaData));    
+
+
+
 
 
 
